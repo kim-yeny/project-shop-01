@@ -8,16 +8,10 @@ span {
     font-size: 16px;
 }
 
-#wrap {
-    width: 1280px;
-    background: #ddd;
-    margin: 0 auto;
-    height: 100%;
-}
-
 /* HEADER and NAVIGATION */
 header {
     position: fixed;
+    top: 0;
     width: 100%;
     padding: 10px 0;
     background: #aaa;
@@ -55,11 +49,83 @@ header .sub-nav a {
     margin: 0 5px;
 }
 
+/* WRAPPER */
+#wrap {
+    width: 1280px;
+    background: #ddd;
+    margin: 0 auto;
+    height: 100%;
+}
+
 /* 비주얼 */
 figure {
     height: 650px;
+    margin-top: 70px;
     background: #bbb;
+    position: relative;
 }
+
+figure > div {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    width: 300px;
+    height: fit-content;
+    transform: translateX(-50%);
+}
+
+figure span {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 140px;
+}
+
+figure span::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 140px;
+    height: 2px;
+    background: #000;
+}
+
+figure .btn-next {
+    float: right;
+    text-align: right;
+}
+
+figure .btn-prev::after {
+    left: 0;
+}
+
+figure .btn-next::after {
+    right: 0;
+}
+
+
+
+
+
+
+figure > div > div {
+    width: 45%;
+    height: 3px;
+    background: red;
+    float: left;
+    cursor: pointer;
+}
+
+figure .btn-right {
+    float: right;
+    background: blue;
+}
+
+
+
+
+
+
 
 /* 3단 배너 */
 .banner {
@@ -69,7 +135,7 @@ figure {
     box-sizing: border-box;
 }
 
-.banner > div {
+.banner > a {
     width: 413px;
     height: 100%;
     background: #c0c0c0;
@@ -81,7 +147,7 @@ figure {
 
 }
 
-.banner > div:nth-child(3) {
+.banner > a:nth-child(3) {
     float: right;
     margin-right: 0;
 }
@@ -104,7 +170,7 @@ figure {
     transition: all 0.3s;
 }
 
-.banner > div:hover span::after {
+.banner > a:hover span::after {
     opacity: 1;
 }
 
