@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    display: block;
+    font-size: 16px;
+}
+
+#wrap {
+    width: 1280px;
+    background: #ddd;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* HEADER and NAVIGATION */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    background: #aaa;
+    text-align: center;
+    z-index: 100;
+}
+
+header > div {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header img {
+    float: left;
+}
+
+header nav {
+    display: inline-block;
+}
+
+header .sub-nav {
+    float: right;
+}
+
+header nav a,
+header .sub-nav a {
+    padding: 10px 5px;
+    line-height: 50px;
+    background: #bbb;
+    margin: 0 10px;
+}
+
+header .sub-nav a {
+    margin: 0 5px;
+}
+
+/* 비주얼 */
+figure {
+    height: 650px;
+    background: #bbb;
+}
+
+/* 3단 배너 */
+.banner {
+    height: 270px;
+    background: #ccc;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.banner > div {
+    width: 413px;
+    height: 100%;
+    background: #c0c0c0;
+    float: left;
+    margin-right: 20px;
+
+    padding: 30px;
+    box-sizing: border-box;
+
+}
+
+.banner > div:nth-child(3) {
+    float: right;
+    margin-right: 0;
+}
+
+.banner span {
+    width: fit-content;
+    margin-top: 10px;
+    position: relative;
+}
+
+.banner span::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    transition: all 0.3s;
+}
+
+.banner > div:hover span::after {
+    opacity: 1;
+}
+
+/* 메뉴 바로가기 */
+.category {
+    /* height: 270px; */
+    background: #ddd;
+    padding: 70px 0;
+    box-sizing: border-box;
+}
+
+.category > div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.category > div::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.category a {
+    display: block;
+    float: left;
+    width: 100px;
+    padding: 0 25px;
+    text-align: center;
+    position: relative;
+}
+
+.category a:not(:last-child):after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #000;
+    top: 0;
+    right: 0;
+}
+
+.category a img {
+    margin-bottom: 10px;
+    transition: all 0.3s;
+}
+
+.category a:hover img {
+    transform: scale(1.05);
+}
+
+/* 상품 그리드 */
+.product {
+    /* height: 560px; */
+    padding-bottom: 70px;
+    background: #eee;
+}
+
+.product > div {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.product > div::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.product .item {
+    float: left;
+    width: 250px;
+    height: 250px;
+    background: #e0e0e0;
+
+    vertical-align: middle;
+    position: relative;
+}
+
+.product .item:hover .hide {
+    opacity: 1;
+}
+
+.product .hide {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.product .item h1 {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+}
+
+.product .item span {
+    margin-bottom: 10px;
+}
+
+/* 매거진 바로가기 */
+.magazine {
+    /* height: 300px; */
+    background: #999;
+    padding: 100px 0;
+}
+
+.magazine > div {
+    width: fit-content;
+    margin: 0 auto;
+    border: 1px solid red;
+    text-align: center;
+}
+
+.magazine span {
+    margin-top: 10px;
+}
+
+.magazine a {
+    display: block;
+    margin-top: 20px;
+}
+
+/* FOOTER Top */
+footer > div::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+footer > div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+footer.top {
+    /* height: 270px; */
+    background: #888;
+    padding: 100px 0;
+}
+
+footer.top .item {
+    float: left;
+    margin: 0 50px;
+}
+
+footer.top h1 {
+    margin-bottom: 50px;
+}
+
+footer.top a {
+    display: block;
+    width: fit-content;
+}
+
+footer.top a:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* FOOTER Bottom */
+footer.bottom {
+    /* height: 100px; */
+    background: #777;
+    padding: 70px 0;
+}
+
+footer.bottom a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #666;
+    margin: 0 25px;
+}
+
+footer.bottom p {
+    width: fit-content;
+    margin: 30px auto 0;
+}
