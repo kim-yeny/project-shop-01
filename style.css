@@ -77,17 +77,22 @@ figure > div {
 figure span {
     display: inline-block;
     position: relative;
+    width: 50%;
     cursor: pointer;
-    width: 140px;
 }
 
 figure span::after {
     content: "";
     position: absolute;
     bottom: -5px;
-    width: 140px;
+    width: 80%;
     height: 2px;
     background: #000;
+    transition: all 0.5s;
+}
+
+figure span:hover::after {
+    width: 100%;
 }
 
 figure .btn-next {
@@ -102,29 +107,6 @@ figure .btn-prev::after {
 figure .btn-next::after {
     right: 0;
 }
-
-
-
-
-
-
-figure > div > div {
-    width: 45%;
-    height: 3px;
-    background: red;
-    float: left;
-    cursor: pointer;
-}
-
-figure .btn-right {
-    float: right;
-    background: blue;
-}
-
-
-
-
-
 
 
 /* 3단 배너 */
@@ -144,7 +126,6 @@ figure .btn-right {
 
     padding: 30px;
     box-sizing: border-box;
-
 }
 
 .banner > a:nth-child(3) {
@@ -162,22 +143,23 @@ figure .btn-right {
     opacity: 0;
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
     background: #000;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 .banner > a:hover span::after {
     opacity: 1;
+    width: 100%;
 }
 
 /* 메뉴 바로가기 */
 .category {
     /* height: 270px; */
-    background: #ddd;
+    background: #fff;
     padding: 70px 0;
     box-sizing: border-box;
 }
@@ -207,14 +189,17 @@ figure .btn-right {
     content: "";
     width: 1px;
     height: 100%;
-    background: #000;
+    background: #ddd;
     top: 0;
     right: 0;
 }
 
 .category a img {
+    width: 100px;
+    height: 100px;
     margin-bottom: 10px;
     transition: all 0.3s;
+    opacity: 0.7;
 }
 
 .category a:hover img {
@@ -225,7 +210,7 @@ figure .btn-right {
 .product {
     /* height: 560px; */
     padding-bottom: 70px;
-    background: #eee;
+    background: #fff;
 }
 
 .product > div {
@@ -243,10 +228,12 @@ figure .btn-right {
     float: left;
     width: 250px;
     height: 250px;
-    background: #e0e0e0;
 
     vertical-align: middle;
     position: relative;
+
+    background-size: cover;
+    background-position: center;
 }
 
 .product .item:hover .hide {
@@ -260,8 +247,17 @@ figure .btn-right {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.8);
     transition: all 0.3s;
+}
+
+.product .box {
+    border: 1px solid #aaa;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
 }
 
 .product .item h1 {
@@ -277,16 +273,22 @@ figure .btn-right {
 
 /* 매거진 바로가기 */
 .magazine {
-    /* height: 300px; */
-    background: #999;
+    /* height: 150px; */
+    background: url(./resources/img/magazine.jpg) no-repeat center;
+    background-size: cover;
     padding: 100px 0;
+    position: relative;
 }
 
-.magazine > div {
+.magazine .inner {
     width: fit-content;
     margin: 0 auto;
     border: 1px solid red;
     text-align: center;
+}
+
+.magazine .inner:hover {
+    border: 1px solid blue;
 }
 
 .magazine span {
