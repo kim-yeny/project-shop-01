@@ -6,214 +6,337 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- SNS share -->
+    <meta property="og:url" content="https://project-lawfirm.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="샘플 법무법인" />
+    <meta property="og:description" content="믿고 맡길 수 있는 법무법인, 샘플" />
+    <meta property="og:image" content="https://project-lawfirm.netlify.app/resources/img/thumb.jpg" />
+
+
+    <!-- Google Web Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpulicy="no-referrer" />
+
+    <!-- CSS -->
+    <script src="./resources/js/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="./resources/css/base.css">
+    <link rel="stylesheet" href="./resources/css/index.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let slide = $('.slide');
+            let slideOn = $('.inner-slide').find('.on').index();
+            let slideLength = slide.length;
+
+            // Slide auto change
+            var idx = 0;
+            setTimeout(autoPlay, 0);
+
+            function autoPlay() {
+                slide.removeClass('on');
+                slide.eq(idx).addClass('on');
+                idx++;
+                if (idx >= slideLength) idx = 0;
+                setTimeout(autoPlay, 3000);
+            }
+
+            // Change slide when click btn at the figure
+            $('.btn-prev').click(function () {
+                slideOn = $('.inner-slide').find('.on').index();
+                slide.eq(slideOn).removeClass('on');
+                slideOn -= 1;
+                if (slideOn < 0) {
+                    slide.eq(slideLength - 1).addClass('on');
+                } else {
+                    slide.eq(slideOn).addClass('on');
+                }
+            });
+
+            $('.btn-next').on('click', function () {
+                slideOn = $('.inner-slide').find('.on').index();
+                slide.eq(slideOn).removeClass('on');
+                slideOn += 1;
+                if (slideOn === slideLength) {
+                    slide.eq(0).addClass('on');
+                } else {
+                    slide.eq(slideOn).addClass('on');
+                }
+            });
+        });
+    </script>
 </head>
-<link rel="stylesheet" href="style.css">
 
 <body>
     <header>
         <div>
-            <a class="logo" href="">
-                <img src="https://via.placeholder.com/100x50" alt="">
-            </a>
+            <a class="logo" href="index.html"></a>
             <nav>
-                <a href="">메뉴메뉴</a>
-                <a href="">메뉴메뉴</a>
-                <a href="">메뉴메뉴</a>
-                <a href="">메뉴메뉴</a>
+                <a href="#">About</a>
+                <a href="#">Made.</a>
+                <a href="#">Product</a>
+                <a href="#">Notice</a>
             </nav>
             <div class="sub-nav">
-                <a href="">sub</a>
-                <a href="">sub</a>
+                <a href="#">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#">
+                    <i class="fas fa-search"></i>
+                </a>
             </div>
         </div>
     </header>
 
     <div id="wrap">
+        <!-- Intro Visual -->
         <figure>
-            <div>
+            <div class="inner-slide">
+                <a href="#" class="slide">
+                    <h1>2022 The Lorem Collection
+                        <span>2022년의 더 로렘 컬렉션을 둘러보세요.</span>
+                    </h1>
+                    <img src="./resources/img/figure-1.jpg" alt="">
+                </a>
+                <a href="#" class="slide">
+                    <h1>Simple is Best.
+                        <span>심플한 감성을 담은 더 로렘 스웻셔츠가 돌아왔습니다.
+                            시즌 한정으로 제작되는 이번 기회를 놓치지 마세요.
+                        </span>
+                    </h1>
+                    <img src="./resources/img/figure-2.jpg" alt="">
+                </a>
+                <a href="#" class="slide">
+                    <h1>The Lorem's Story
+                        <span>더 로렘의 발자취와 감성을 담아낸 매거진을 온라인으로 먼저 만나보세요.
+                        </span>
+                    </h1>
+                    <img src="./resources/img/figure-3.jpg" alt="">
+                </a>
+            </div>
+            <div class="inner-btn">
                 <span class="btn-prev">Prev</span>
                 <span class="btn-next">Next</span>
             </div>
         </figure>
 
-        <section class="banner" id="">
-            <a href="">
+        <!-- 3rd Banner -->
+        <section class="banner">
+            <a href="#" style="background-image: url('./resources/img/banner-1.jpg');">
                 <h1>
-                    Spring collection
+                    NEW Collection
                     <span>View more</span>
                 </h1>
             </a>
-            <a href="">
+            <a href="#" style="background-image: url('./resources/img/banner-2.jpg');">
                 <h1>
-                    Weekly best
+                    이너웨어 기획
                     <span>View more</span>
                 </h1>
             </a>
-            <a href="">
+            <a href="#" style="background-image: url('./resources/img/banner-3.jpg');">
                 <h1>
-                    ~20% Event
+                    시즌 오프 ~20%
                     <span>View more</span>
                 </h1>
             </a>
         </section>
 
-        <section class="category" id="">
+        <section class="category">
             <div class="inner">
-                <a href="">
+                <a href="#">
                     <img src="./resources/img/category-1.svg" alt="">
                     WOMEN
                 </a>
-                <a href="">
+                <a href="#">
                     <img src="./resources/img/category-2.svg" alt="">
                     MEN
                 </a>
-                <a href="">
+                <a href="#">
                     <img src="./resources/img/category-3.svg" alt="">
                     SHOES
                 </a>
-                <a href="">
+                <a href="#">
                     <img src="./resources/img/category-4.svg" alt="">
                     BAG
                 </a>
-                <a href="">
+                <a href="#">
                     <img src="./resources/img/category-5.svg" alt="">
                     ACC
                 </a>
+                <a href="#">
+                    <img src="./resources/img/category-6.svg" alt="">
+                    ETC.
+                </a>
             </div>
         </section>
 
-        <section class="product" id="">
+        <section class="product">
             <div>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-1.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-1.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Etc.</span>
+                            Apple EarPods
                         </h1>
                     </div>
                 </a>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-2.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-2.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Fashion</span>
+                            AR sweatshirt
                         </h1>
                     </div>
                 </a>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-3.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-3.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Etc.</span>
+                            Perfume by lorem
                         </h1>
                     </div>
                 </a>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-4.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-4.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Acc</span>
+                            Gold 14K earring
                         </h1>
                     </div>
                 </a>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-5.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-5.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Bag</span>
+                            Brown leather bag
                         </h1>
                     </div>
                 </a>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-6.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-6.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Shoes</span>
+                            NIKE orange Sneakers
                         </h1>
                     </div>
                 </a>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-7.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-7.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Shoes</span>
+                            The rainbow Sneakers
                         </h1>
                     </div>
                 </a>
-                <a href="" class="item" style="background-image: url(./resources/img/product-item-8.jpg);">
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-8.jpg);">
                     <div class="hide">
                         <div class="box"></div>
                         <h1>
-                            <span>품목명</span>
-                            상품명
+                            <span>Bag</span>
+                            Wood leather bag
+                        </h1>
+                    </div>
+                </a>
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-9.jpg);">
+                    <div class="hide">
+                        <div class="box"></div>
+                        <h1>
+                            <span>Bag</span>
+                            Ivory net bag
+                        </h1>
+                    </div>
+                </a>
+                <a href="#" class="item" style="background-image: url(./resources/img/product-item-10.jpg);">
+                    <div class="hide">
+                        <div class="box"></div>
+                        <h1>
+                            <span>Acc</span>
+                            Swarovski gold watch
                         </h1>
                     </div>
                 </a>
             </div>
         </section>
+    </div>
 
-        <section class="magazine">
-            <div class="inner">
-                <h1>
-                    큰 제목
-                    <span>내용입니다 내용입니다 내용입니다</span>
-                </h1>
-                <a href="">바로가기 버튼</a>
+    <section class="magazine">
+        <div class="inner">
+            <h1>
+                The Lorem Magazine
+                <span>The Lorem의 온라인 매거진입니다. 지난 컬렉션부터 NEW 아이템까지 한 눈에-
+                    인플루언서의 아이템 활용 팁도 구경해 보세요.
+                </span>
+            </h1>
+            <a href="#">E n t e r</a>
+        </div>
+    </section>
+
+    <footer class="top">
+        <div>
+            <div class="item">
+                <h1>INFORMATION</h1>
+                <a href="#">This is</a>
+                <a href="#">A sample</a>
+                <a href="#">Text</a>
+            </div>
+            <div class="item">
+                <h1>COLLECTION</h1>
+                <a href="#">Made by</a>
+                <a href="#">Ye-eun Kim</a>
+                <a href="#">And on</a>
+                <a href="#">One's own</a>
+            </div>
+            <div class="item">
+                <h1>MAGAZINE</h1>
+                <a href="#">With no</a>
+                <a href="#">Help from</a>
+                <a href="#">Others</a>
+            </div>
+            <div class="item">
+                <h1>ACCOUNT</h1>
+                <a href="#">Have</a>
+                <a href="#">A nice</a>
+                <a href="#">Day</a>
             </div>
         </div>
-        </section>
-
-        <footer class="top">
-            <div>
-                <div class="item">
-                    <h1>타이틀입니다</h1>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                </div>
-                <div class="item">
-                    <h1>타이틀입니다</h1>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                </div>
-                <div class="item">
-                    <h1>타이틀입니다</h1>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                </div>
-                <div class="item">
-                    <h1>타이틀입니다</h1>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                    <a href="">바로가기</a>
-                </div>
-            </div>
-        </footer>
-        <footer class="bottom">
-            <div class="items">
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-            </div>
-            <p>
-                Copyrightⓒ2022 yeny-kim All rights reserved.
-            </p>
-        </footer>
-    </div>
+    </footer>
+    <footer class="bottom">
+        <div class="items">
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-google"></i>
+            </a>
+        </div>
+        <p>
+            Copyrightⓒ2022 yeny-kim All rights reserved.
+        </p>
+    </footer>
 </body>
 
 </html>

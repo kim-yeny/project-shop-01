@@ -1,0 +1,437 @@
+/* All */
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* touch-action: none; */
+    -webkit-overflow-scrolling: none;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    font-size: 16px;
+}
+
+h1 {
+    font-family: 'Noto Serif KR', serif;
+}
+
+p {
+    font-size: 0.8rem;
+}
+
+span {
+    display: block;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: #0D2618;
+    text-align: center;
+    z-index: 100;
+}
+
+header > div {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+header .logo {
+    float: left;
+    width: 120px;
+    height: 50px;
+    background: url('../img/logo.svg') no-repeat center;
+}
+
+header nav {
+    display: inline-block;
+}
+
+header .sub-nav {
+    float: right;
+}
+
+header nav a,
+header .sub-nav a {
+    margin: 0 25px;
+    padding: 1px 2px;
+    line-height: 50px;
+    color: #fff;
+}
+
+header .sub-nav a {
+    margin: 0 5px;
+}
+
+header nav a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* Wrapper */
+#wrap {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* Visual */
+figure {
+    position: relative;
+    height: 650px;
+    margin-top: 50px;
+}
+
+figure .inner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+figure .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+figure .on {
+    opacity: 1;
+}
+
+figure .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+figure h1 {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    font-size: 3rem;
+}
+
+figure h1 span {
+    width: 500px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #777;
+}
+
+/* FIGURE - BTN at the bottom */
+figure .inner-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    width: 1200px;
+    height: fit-content;
+    transform: translateX(-50%);
+}
+
+figure .inner-btn span {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+figure .inner-btn span::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 2px;
+    background: #000;
+    transition: all 0.5s;
+}
+
+figure .inner-btn span:hover::after {
+    width: 100%;
+}
+
+figure .inner-btn .btn-next {
+    float: right;
+    text-align: right;
+}
+
+figure .inner-btn .btn-prev::after {
+    left: 0;
+}
+
+figure .inner-btn .btn-next::after {
+    right: 0;
+}
+
+/* 3rd Banner */
+.banner {
+    height: 270px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.banner > a {
+    float: left;
+    width: 413px;
+    height: 100%;
+    margin-right: 20px; 
+    padding: 30px;
+    box-sizing: border-box;
+    background-size: cover;
+}
+
+.banner > a:nth-child(3) {
+    float: right;
+    margin-right: 0;
+}
+
+.banner span {
+    position: relative;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.banner span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #000;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.banner > a:hover span::after {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Category BTN */
+.category {
+    background: #fff;
+    padding: 50px 0 70px;
+    box-sizing: border-box;
+}
+
+.category > div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.category > div::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.category a {
+    display: block;
+    float: left;
+    position: relative;
+    width: 100px;
+    padding: 0 25px;
+    text-align: center;
+    color: #aaa;
+}
+
+.category a:not(:last-child):after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5px;
+    height: 100%;
+    background: #eee;
+}
+
+.category a img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.category a:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Product grid */
+.product {
+    padding-bottom: 100px;
+    background: #fff;
+}
+
+.product > h1 {
+    padding: 5px 0;
+    margin-bottom: 20px;
+    border-top: 1px solid #D9D4CC;
+    border-bottom: 1px solid #D9D4CC;
+    text-align: center;
+    color: #A6A6A6;
+}
+
+.product > div {
+    margin: 0 auto;
+}
+
+.product > div::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.product .item {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product .box {
+    border: 1px solid #aaa;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+}
+
+.product .item:hover .hide {
+    opacity: 1;
+}
+
+.product .hide {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(13, 38, 24, 0.85);
+    transition: all 0.3s;
+}
+
+.product .item h1 {
+    width: 190px;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Magazine */
+.magazine {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background: url('../img/magazine.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.magazine .inner {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.magazine span {
+    margin-top: 10px;
+}
+
+
+.magazine h1 {
+    margin-bottom: 30px;
+}
+
+.magazine a {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    border: 2px solid #0D2618;
+    background: #0D2618;
+    line-height: 50px;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.magazine a:hover {
+    background: transparent;
+    color: #0D2618;
+}
+
+/* Footer - Top */
+footer > div::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+footer > div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+footer.top {
+    padding: 50px 0;
+    background: #D9D4CC;
+}
+
+footer.top .item {
+    float: left;
+    margin: 0 60px;
+}
+
+footer.top h1 {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #0D2618;
+}
+
+footer.top a {
+    display: block;
+    width: fit-content;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+footer.top a:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+/* Footer - Bottom */
+footer.bottom {
+    padding: 30px 0;
+    background: #A6A6A6;
+}
+
+footer.bottom a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #fff;
+}
+
+footer.bottom p {
+    width: fit-content;
+    margin: 20px auto 0;
+    color: #fff;
+}
