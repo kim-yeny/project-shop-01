@@ -3,14 +3,12 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+#warning {
+    display: none;
+}
+
 body,
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    /* touch-action: none; */
-    -webkit-overflow-scrolling: none;
-    overflow-x: hidden;
-    overscroll-behavior: none;
     font-size: 16px;
 }
 
@@ -434,4 +432,21 @@ footer.bottom p {
     width: fit-content;
     margin: 20px auto 0;
     color: #fff;
+}
+
+/* Responsive ver. */
+@media(max-width : 1024px) {
+    header, #wrap, section, footer {
+        display: none;
+    }
+
+    #warning {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: red;
+    }
 }
