@@ -31,56 +31,15 @@
         crossorigin="anonymous" referrerpulicy="no-referrer" />
 
     <!-- CSS -->
-    <!-- <script src="./resources/js/prefixfree.min.js"></script> -->
+    <script src="./resources/js/prefixfree.min.js"></script>
     <link rel="stylesheet" href="./resources/css/base.css">
     <link rel="stylesheet" href="./resources/css/index.css">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
+    
     <!-- Start JS -->
-    <script>
-        $(document).ready(function () {
-            let slide = $('.slide');
-            let slideOn = $('.inner-slide').find('.on').index();
-            let slideLength = slide.length;
-
-            // Slide auto change
-            var idx = 0;
-            setTimeout(autoPlay, 0);
-
-            function autoPlay() {
-                slide.removeClass('on');
-                slide.eq(idx).addClass('on');
-                idx++;
-                if (idx >= slideLength) idx = 0;
-                setTimeout(autoPlay, 3000);
-            }
-
-            // Change slide when click btn at the figure
-            $('.btn-prev').click(function () {
-                slideOn = $('.inner-slide').find('.on').index();
-                slide.eq(slideOn).removeClass('on');
-                slideOn -= 1;
-                if (slideOn < 0) {
-                    slide.eq(slideLength - 1).addClass('on');
-                } else {
-                    slide.eq(slideOn).addClass('on');
-                }
-            });
-
-            $('.btn-next').on('click', function () {
-                slideOn = $('.inner-slide').find('.on').index();
-                slide.eq(slideOn).removeClass('on');
-                slideOn += 1;
-                if (slideOn === slideLength) {
-                    slide.eq(0).addClass('on');
-                } else {
-                    slide.eq(slideOn).addClass('on');
-                }
-            });
-        });
-    </script>
+    <script src="resources/js/index.js"></script>
 </head>
 
 <body>
@@ -131,8 +90,8 @@
                 </a>
             </div>
             <div class="inner-btn">
-                <span class="btn-prev">Prev</span>
-                <span class="btn-next">Next</span>
+                <span class="btn-prev" tabindex="0">Prev</span>
+                <span class="btn-next" tabindex="0">Next</span>
             </div>
         </figure>
 
